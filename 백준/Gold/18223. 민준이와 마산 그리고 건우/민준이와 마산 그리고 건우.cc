@@ -12,7 +12,7 @@ void dijkstra(int start)
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     fill(dist, dist + 5001, INF);
     dist[start] = 0;
-    pq.push(make_pair(start, 0));
+    pq.push({ start, 0 });
 
     while (!pq.empty())
     {
@@ -30,7 +30,7 @@ void dijkstra(int start)
             if (dist[next_node] > next_cost)
             {
                 dist[next_node] = next_cost;
-                pq.push(make_pair(next_node, next_cost));
+                pq.push({ next_node, next_cost });
             }
         }
     }
