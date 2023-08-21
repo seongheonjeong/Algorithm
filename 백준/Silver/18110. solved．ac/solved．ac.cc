@@ -12,14 +12,14 @@ void solve()
         cout << 0 << '\n';
         return ;
     }
-    int a = round(n * 0.15); double temp = 0; int avg = 0;
+    int a = round(n * 0.15); double temp = 0; \
     
-    for (int i = a; i < n -a ; i++)
+    for (int i = 0; i < n -(a*2) ; i++)
     {
-        temp += difficult[i];
+        temp += difficult[i+a];
     }
-    avg = round(temp / (n - (a * 2)));
-    cout << avg << '\n';
+    
+    cout << round(temp / (n - (a * 2))) << '\n';
 }
 
 void input()
