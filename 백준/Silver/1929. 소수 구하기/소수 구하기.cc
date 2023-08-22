@@ -7,13 +7,12 @@ int M, N;
 
 int main()
 {
-	
 	cin >> M >> N;
-
 	
-	for (int i = 2; i <= sqrt(N); i++)
+	for (int i = 2; i <= N; i++)
 	{
-		for (int j = i * i; j <= N; j += i)
+		if(arr[i]) continue;
+		for (int j = i+i; j <= N; j += i)
 		{
 			arr[j] = true; //소수가 아니면 true
 		}
