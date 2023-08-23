@@ -12,34 +12,23 @@ int main()
 	{
 		cin >> num;
 		arr[i] = num;
-		while (1)
-		{
-			if (s.empty())
-			{
-				s.push(i); //인덱스 값을 넣어줌
-				break;
-			}
-			int beforeidx=s.top();
-			if (num > arr[beforeidx])
-			{
-				ans[beforeidx] = num;
-				s.pop();
-			}
-			else
-			{
-				s.push(i);
-				break;
-			}
 
+		while (!s.empty() && arr[s.top()] < num)
+		{
+			ans[s.top()] = num;
+			s.pop();
 		}
+
+		s.push(i);
 	}
 
 	while (!s.empty())
 	{
-		int index=s.top();
-		ans[index] = -1;
+		ans[s.top()] = -1;
 		s.pop();
 	}
+
+	
 
 	for (int i = 0; i < N; i++)
 	{
