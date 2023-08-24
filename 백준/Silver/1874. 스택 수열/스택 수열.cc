@@ -7,6 +7,8 @@ char c[200002];
 
 int main()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 	stack<int> s;
 
 	int index = 0, cindex = 0, idx=0;
