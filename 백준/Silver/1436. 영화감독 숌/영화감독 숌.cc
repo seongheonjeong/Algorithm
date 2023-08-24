@@ -19,7 +19,7 @@ int main()
             v.push_back(i);
             cnt++;
         }
-        if (cnt == 10000)
+        if (cnt == N)
             break;
     }
     cout << v[N - 1]<<'\n';
