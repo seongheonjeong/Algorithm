@@ -1,31 +1,35 @@
 #include <iostream>
 #include <map>
+#include <algorithm>
+#include <cmath>
 #include <string>
 using namespace std;
 
-
+map<string, int> p1;
+map<int, string> p2;
 int main()
 {
-	cin.tie(0);
+    cin.tie(0);
 	ios::sync_with_stdio(0);
-
-	map<string, int>Pokemon1; 
-	map<int, string>Pokemon2;
-	string str; //문자열 입력
-	int n,m; //n=포켓몬 개수 , m=맞춰야 하는 문제의 개수
-	cin >> n >> m;
-	for (int i = 1; i <= n; i++)
+    cout.tie(0);
+    
+	int M,N; //정답 개수, 문제 개수 
+	cin >> M >> N;
+	for (int i = 1; i <= M; i++)
 	{
+		string str;
 		cin >> str;
-		Pokemon1.insert({ str, i });
-		Pokemon2.insert({ i, str });
+		p1.insert({ str, i });
+		p2.insert({ i, str });
 	}
-	for (int i = 0; i < m; i++)
+
+	for (int i = 0; i < N; i++)
 	{
+		string str;
 		cin >> str;
-		if (str[0] >= 'A' && str[0] <= 'Z')
-			cout << Pokemon1[str] << '\n'; //key값 str에 대한 value 값 출력
+		if (str[0]>='A'&&str[0]<='Z') //문자열을 정수 값으로 변환 , 정수값 없을 시에 0 리턴
+			cout << p1[str] << '\n';
 		else
-			cout << Pokemon2[stoi(str)] << '\n'; //문자열 정수변환 stoi()사용  
+			cout << p2[stoi(str)]<<'\n';
 	}
 }
