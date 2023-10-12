@@ -30,7 +30,7 @@ public class Main {
             {
                 if(prime(n))
                 {
-                    System.out.println(n);
+                    bw.write(n+"\n");
                     break;
                 }
                 else
