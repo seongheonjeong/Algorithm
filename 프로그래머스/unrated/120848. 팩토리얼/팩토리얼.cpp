@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 int solution(int n) {
     int i = 1;
     int answer = 1;
@@ -13,6 +11,5 @@ int solution(int n) {
         i++;
         answer *= i;
     }
-
     return i - 1;
 }
