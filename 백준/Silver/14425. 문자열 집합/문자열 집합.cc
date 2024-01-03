@@ -12,7 +12,7 @@ int main()
 	{
 		string s;
 		cin >> s;
-		m.insert({ s,1 });
+		m.insert({ s,0 });
 	}
 	for (int i = 0; i < M; i++)
 	{
