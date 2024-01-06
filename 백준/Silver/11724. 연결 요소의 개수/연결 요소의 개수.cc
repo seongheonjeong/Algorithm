@@ -1,15 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
-int N,M,graph[1001][1001],cnt=1;
+int N,M,graph[1001][1001],cnt;
 bool check[1001];
-void dfs(int n)
+void bfs(int n)
 {
-	check[n] = true;
-	for (int i = 1; i <= N; i++)
+	queue <int> q;
+	check[n] = 1;
+	q.push(n);
+	while (!q.empty())
 	{
-		if (graph[n][i] && !check[i])
-			dfs(i);
+		int cur = q.front();
+		q.pop();
+		for (int i = 1; i <= N; i++)
+		{
+			if (graph[cur][i] && !check[i])
+			{
+				q.push(i);
+				check[i] = true;
+			}
+		}
 	}
+
 }
 int main()
 {
@@ -22,11 +33,10 @@ int main()
 		cin >> a >> b;
 		graph[a][b] = graph[b][a] = 1;
 	}
-	dfs(1);
-	for (int i = 2; i <= N; i++)
+	for (int i = 1; i <= N; i++)
 	{
 		if (!check[i]) cnt++;
-		dfs(i);
+		bfs(i);
 	}
 	cout << cnt;
 }
