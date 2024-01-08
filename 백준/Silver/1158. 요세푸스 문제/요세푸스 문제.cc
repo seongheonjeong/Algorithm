@@ -1,11 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 int N, K,cnt;
-queue<int>q;
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
+	queue<int>q;
 	cin >> N >> K;
 	for (int i = 1; i <= N; i++)
 	{
@@ -14,20 +15,21 @@ int main()
 	cout << "<";
 	while (!q.empty())
 	{
-		cnt++;
-		int temp = q.front();
+		int cur = q.front();
 		q.pop();
+		cnt++;
 		if (cnt == K)
 		{
-			cout << temp;
 			if (!q.empty())
-				cout << ", ";
-			cnt = 0;
+			{
+				cout << cur << ", ";
+				cnt = 0;
+			}
+			else
+				cout << cur;
 		}
 		else
-		{
-			q.push(temp);
-		}
+			q.push(cur);
 	}
 	cout << ">";
 }
