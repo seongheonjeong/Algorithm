@@ -1,7 +1,6 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-int N,arr[10],answer;
+int N,answer,arr[10];
 int main()
 {
 	ios_base::sync_with_stdio(false);
@@ -9,17 +8,16 @@ int main()
 	cin >> N;
 	while (N != 0)
 	{
-		int temp = N % 10;
+		int tmp = N % 10;
 		N /= 10;
-		arr[temp]++;
+		arr[tmp]++;
 	}
-	int sixNine = (arr[6] + arr[9] + 1) / 2;
 	for (int i = 0; i < 10; i++)
 	{
-		if (i == 6 || i == 9)
-			continue;
-		answer = max(answer,arr[i]);
+		if (i != 6 && i != 9)
+			answer = max(answer, arr[i]);
 	}
-	answer = max(answer, sixNine);
-	cout << answer << '\n';
+	answer = max(answer, (arr[6] + arr[9] + 1)/2);
+
+	cout << answer;
 }
