@@ -19,7 +19,7 @@ int main() {
     v1.erase(unique(v1.begin(), v1.end()), v1.end());
     for (int i = 0; i < N; i++)
     {
-        cout << lower_bound(v1.begin(), v1.end(), v2[i]) - v1.begin() << " ";
+        cout << upper_bound(v1.begin(), v1.end(), v2[i]) - v1.begin()-1 << " ";
     }
    
 }
