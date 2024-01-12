@@ -44,13 +44,7 @@ int main() {
         }
     }
     bfs(x, y);
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            answer[i][j]++;
-        }
-    }
+   
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -64,7 +58,7 @@ int main() {
                 cout << -1 << " ";
             else
             {
-                cout << answer[i][j] - 1 << " ";
+                cout << answer[i][j] << " ";
             }
         }
         cout << '\n';
