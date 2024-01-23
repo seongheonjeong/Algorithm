@@ -16,7 +16,7 @@ int main()
         {
             string s1, s2;
             cin >> s1 >> s2;
-            m[s2]++;      
+            ++m[s2];      
         }
 
         for (auto iter = m.begin(); iter != m.end(); iter++)
