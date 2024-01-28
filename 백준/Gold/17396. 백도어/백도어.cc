@@ -1,11 +1,11 @@
 #include<bits/stdc++.h>
-#define INF 1234987654321
+#define INF 9999999999
 using namespace std;
 
 int N, M,a,b,t;
 long long dist[100001];
-long long v[100001]; //갈 수 있는 곳인지 아닌지(시야에 보이는가)
-vector<pair<long, long>>graph[100001];
+int v[100001]; //갈 수 있는 곳인지 아닌지(시야에 보이는가)
+vector<pair<int,int>>graph[100001];
 priority_queue<pair<int, long long>, vector<pair<int, long long>>, greater<pair<int, long long>>>pq;
 void dijkstra()
 {
