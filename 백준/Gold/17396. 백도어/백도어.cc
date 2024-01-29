@@ -16,7 +16,7 @@ void dijkstra()
     {
         pair<int, long long>cur = pq.top(); 
         pq.pop();
-        
+        if (cur.first == N - 1)break;
         if (cur.second > dist[cur.first]) continue;
         for (int i = 0; i < graph[cur.first].size(); i++)
         {
@@ -24,7 +24,7 @@ void dijkstra()
             if (v[next.first] == 1) continue;
             if (dist[cur.first]+next.second < dist[next.first])
             {
-                dist[next.first] = next.second+dist[cur.first];
+                dist[next.first] = next.second+dist[cur.first];          
                 pq.push({ next.first,dist[next.first]});         
             }
         }
