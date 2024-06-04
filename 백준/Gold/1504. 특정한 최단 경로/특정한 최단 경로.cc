@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define INF 987654321
-int N, E,arr[801][801],num1,num2,answer1= 987654321,answer2= 987654321;
+#define INF 99999999
+int N, E,arr[801][801],num1,num2,answer1= 99999999,answer2= 99999999;
 vector<pair<int, int>>v[801];
 int dist[801];
 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>>pq;
